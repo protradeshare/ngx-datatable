@@ -257,6 +257,17 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
   }
 
   /**
+   * The current maxSize.
+   * Default value: `3`
+   */
+  @Input() set maxSize(val: number) {
+    this._maxSize = val;
+  }
+  get maxSize(): number {
+    return this._maxSize;
+  }
+
+  /**
    * Show the linear loading bar.
    * Default value: `false`
    */
@@ -627,6 +638,7 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
   _limit: number | undefined;
   _count: number = 0;
   _offset: number = 0;
+  _maxSize: number = 3;
   _rows: any[];
   _groupRowsBy: string;
   _internalRows: any[];

@@ -32,6 +32,7 @@ import { DatatableFooterDirective } from './footer.directive';
         [pagerNextIcon]="pagerNextIcon"
         [page]="curPage"
         [size]="pageSize"
+        [maxSize]="maxSize"
         [count]="rowCount"
         [hidden]="!isVisible"
         (change)="page.emit($event)"
@@ -48,6 +49,7 @@ export class DataTableFooterComponent {
   @Input() footerHeight: number;
   @Input() rowCount: number;
   @Input() pageSize: number;
+  @Input() maxSize: number;
   @Input() offset: number;
   @Input() pagerLeftArrowIcon: string;
   @Input() pagerRightArrowIcon: string;

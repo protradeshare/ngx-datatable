@@ -59,6 +59,15 @@ export class DataTablePagerComponent {
   }
 
   @Input()
+  set maxSize(val: number) {
+    this._maxSize = val;
+  }
+
+  get maxSize(): number {
+    return this._maxSize;
+  }
+
+  @Input()
   set count(val: number) {
     this._count = val;
     this.pages = this.calcPages();
@@ -88,6 +97,7 @@ export class DataTablePagerComponent {
   _count: number = 0;
   _page: number = 1;
   _size: number = 0;
+  _maxSize: number = 3;
   pages: any;
 
   canPrevious(): boolean {
@@ -120,7 +130,7 @@ export class DataTablePagerComponent {
     const pages = [];
     let startPage = 1;
     let endPage = this.totalPages;
-    const maxSize = 5;
+    const maxSize = this.maxSize;
     const isMaxSized = maxSize < this.totalPages;
 
     page = page || this.page;

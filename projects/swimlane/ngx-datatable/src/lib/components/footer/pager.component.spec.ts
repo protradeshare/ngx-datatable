@@ -218,11 +218,11 @@ describe('DataTablePagerComponent', () => {
       pager.page = 1;
     });
 
-    it('should return array with max 5 pages to display', () => {
+    it('should return array with max 3 pages to display', () => {
       const pages = pager.calcPages(1);
-      expect(pages.length).toEqual(5);
+      expect(pages.length).toEqual(3);
       expect(pages[0].number).toEqual(1);
-      expect(pages[4].number).toEqual(5);
+      expect(pages[2].number).toEqual(3);
     });
 
     it('should return array with available pages to display', () => {
