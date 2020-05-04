@@ -35,7 +35,7 @@ MIT
 @angular/router
 MIT
 
-@swimlane/ngx-datatable
+@protradeshare/ngx-datatable
 MIT
 
 core-js
