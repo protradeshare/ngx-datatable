@@ -66,6 +66,11 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
    * Rows that are displayed in the table.
    */
   @Input() set rows(val: any) {
+    const empty = Object.keys(val).length === 0 && val.constructor === Object;
+    if (empty) {
+      return;
+    }
+
     this._rows = val;
 
     if (val) {
